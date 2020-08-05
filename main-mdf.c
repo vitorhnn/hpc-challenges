@@ -119,7 +119,7 @@ void mdf_heat(matrix_t *u0, matrix_t *u1,
 
   #pragma omp parallel
   for (unsigned int steps = 0; steps < tsteps; steps++) {
-    #pragma omp for
+    #pragma omp for nowait
     for (unsigned int i = 0; i < npZ; i++) {
       for (unsigned int j = 0; j < npY; j++) {
         for (unsigned int k = 0; k < npX; k++) {
